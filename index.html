@@ -10,7 +10,6 @@
 </head>
 <body>
   <div class="container">
-
     <div class="row" id="customerDetails">
       <form id="newCustomer">
         <div class="form-group">
@@ -78,7 +77,8 @@
                 Xtra Large - 20"
               </label>
             </div>
-            <button type="button" id="add-pizza">add pie</button>
+            <button type="button" id="add-pizza">add pizza to order</button>
+            <button type="button" id="submit-order">submit order</button>
             <div class="order">
               <p id="totalPrice">your order today comes to: <span id="price">0</span> Kongbucks*</p>
               <ul id="yourPies">
@@ -94,7 +94,13 @@
               <p>this pizza costs <strong><span class="yourPrice"></span> Kongbucks</strong></p>
             </div>
           </div>
+        </div>
+        <div class="row" id="reciept">
+          <h5>your order today:</h5>
+          <ol id="pizzasOrdered">
 
+          </ol>
+          <p>Your pizza will be delivered by one of our elite Deliverators to your address at <span id="address"></span> within thirty minutes or you can have it free, shoot the driver, take his car, file a class-action suit. That's the Cosa Nostra guarantee, straight from Uncle Enzo himself.</p>
         </div>
       </div>
     </body>

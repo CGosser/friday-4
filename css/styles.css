@@ -5,3 +5,19 @@
 #thisPizza {
   display: none;
 }
+#pizzaOptions {
+  display: none;
+}
+#reciept {
+  display: none;
+}
+.container {
+  margin-top: 8%;
+}
+#reciept {
+  display: none;
+}
+
+#pizzasOrdered {
+  text-transform: capitalize;
+}

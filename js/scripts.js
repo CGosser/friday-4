@@ -3,6 +3,9 @@ function customer(first, last) {
   this.lastName = last;
   this.address = [];
 }
+customer.prototype.location = function() {
+  return this.address[0] + " in the city of " + this.address[1] + ", " + this.address[2]
+}
 
 function pizza(size, topping) {
   this.size = size;
@@ -41,7 +44,7 @@ pizza.prototype.cost = function() {
   return Math.ceil(price * priceMult)
 }
 pizza.prototype.yourPizza = function() {
-  return this.size + " with " + this.topping
+  return this.size + " pizza, with " + this.topping
 }
 
 $(document).ready(function(){
@@ -49,6 +52,7 @@ $(document).ready(function(){
   var size = ""
   var piesList = []
   var totalPrice = 0
+  var you = {}
   $("#submitCustomer").click(function(event){
     event.preventDefault()
     var firstName = $("#firstName").val();
@@ -56,9 +60,10 @@ $(document).ready(function(){
     var street = $("#street").val();
     var city = $("#city").val();
     var state = $("#state").val();
-    var you = new customer(firstName, lastName);
-    // customer.address.push(street, city, state)
-    $("#customerDetails").hide()
+    you = new customer(firstName, lastName);
+    you.address.push(street, city, state);
+    $("#customerDetails").hide();
+    $("#pizzaOptions").show();
   })
   $("#add-pizza").click(function(event){
     event.preventDefault()
@@ -66,18 +71,23 @@ $(document).ready(function(){
     size = $("input:radio[name=size]:checked").val();
     var pie = new pizza(size, topping);
     piesList.push(pie);
-    // console.log(pie);
-    // console.log(pie.yourPizza());
-    totalPrice += pie.cost()
-    $("#price").empty()
-    $("#price").text(totalPrice)
+    totalPrice += pie.cost();
+    $("#price").empty();
+    $("#price").text(totalPrice);
     $("#yourPies").append("<li><span class='pie'>" + pie.yourPizza() + "</span></li>");
     $(".pie").last().click(function() {
-      console.log(pie);
       $("#thisPizza").show();
       $(".yourTopping").text(pie.topping);
       $(".yourSize").text(pie.size);
       $(".yourPrice").text(pie.cost());
     });
   })
-})
+  $("#submit-order").click(function(event){
+    $("#pizzaOptions").hide();
+    $("#reciept").show()
+    piesList.forEach(function(pie) {
+    $("#pizzasOrdered").append("<li> a " + pie.yourPizza() + " - " + pie.cost() + " Kongbucks" + "</li>");
+    })
+    $("#reciept").append(you.location())
+  });
+});
