@@ -10,8 +10,13 @@
 </head>
 <body>
   <div class="container">
+    <div class="jumbotron">
+      <img src="img/CosaNostra.jpg" alt="CosaNostra Pizza #3569">
+    </div>
     <div class="row" id="customerDetails">
+      <h1> please enter your information for your order: </h1>
       <form id="newCustomer">
+        <div class="col-lg-6">
         <div class="form-group">
           <label for="new-first-name">First name</label>
           <input type="text" class="form-control" id="firstName">
@@ -20,6 +25,8 @@
           <label for="new-last-name">Last name</label>
           <input type="text" class="form-control" id="lastName">
         </div>
+      </div>
+      <div class="col-lg-6">
         <div class="address">
           <div class="form-group">
             <label for="street">Street</label>
@@ -34,11 +41,13 @@
             <input type="text" class="form-control" id="state">
           </div>
         </div>
+      </div>
           <button type="button" id="submitCustomer">Submit Customer Details</button>
         </div>
 
         <div class="row" id="pizzaOptions">
           <div class="col-lg-7">
+            <h1>Please choose what size of pizza you want and your toppings</h1>
             <select class="form-control" id="topping">
               <option value="pepperoni">Pepperoni</option>
               <option value="sausage">Sausage</option>
@@ -80,7 +89,7 @@
             <button type="button" id="add-pizza">add pizza to order</button>
             <button type="button" id="submit-order">submit order</button>
             <div class="order">
-              <p id="totalPrice">your order today comes to: <span id="price">0</span> Kongbucks*</p>
+              <p id="totalPrice">your order today comes to: <span class="price">0</span> Kongbucks*</p>
               <ul id="yourPies">
               </ul>
             </div>
@@ -100,7 +109,9 @@
           <ol id="pizzasOrdered">
 
           </ol>
-          <p>Your pizza will be delivered by one of our elite Deliverators to your address at <span id="address"></span> within thirty minutes or you can have it free, shoot the driver, take his car, file a class-action suit. That's the Cosa Nostra guarantee, straight from Uncle Enzo himself.</p>
+          <p>your total price will come to <span class="price"> </span> Kongbucks</p>
+          <p>Thank you, <span id="customerName"></span>. Your pizza will be delivered by one of our elite Deliverators to your address at, <span id="address"></span>, within thirty minutes or you can have it free, shoot the driver, take his car, file a class-action suit. That's the Cosa Nostra guarantee, straight from Uncle Enzo himself.</p>
+          <p>your order number is: #<span id="orderNumber"></span> Kongbucks</p>
         </div>
       </div>
     </body>

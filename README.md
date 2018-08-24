@@ -1,12 +1,12 @@
-# _{Application Name}_
+# _Pizza Website_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _Let's you order a pizza from Cosa Nostra Pizza, August, 24, 2018_
 
-#### By _**{List of contributors}**_
+#### By _**Chris Gosser**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This website has a form to input customer details and make an order for pizza, then displays them_
 
 ## Setup/Installation Requirements
 

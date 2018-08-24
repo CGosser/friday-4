@@ -60,10 +60,12 @@ $(document).ready(function(){
     var street = $("#street").val();
     var city = $("#city").val();
     var state = $("#state").val();
+    if (firstName != "" && lastName != "" && street != "" && city != "" && state != "") {
     you = new customer(firstName, lastName);
     you.address.push(street, city, state);
     $("#customerDetails").hide();
     $("#pizzaOptions").show();
+  }
   })
   $("#add-pizza").click(function(event){
     event.preventDefault()
@@ -72,8 +74,8 @@ $(document).ready(function(){
     var pie = new pizza(size, topping);
     piesList.push(pie);
     totalPrice += pie.cost();
-    $("#price").empty();
-    $("#price").text(totalPrice);
+    $(".price").empty();
+    $(".price").text(totalPrice);
     $("#yourPies").append("<li><span class='pie'>" + pie.yourPizza() + "</span></li>");
     $(".pie").last().click(function() {
       $("#thisPizza").show();
@@ -83,11 +85,16 @@ $(document).ready(function(){
     });
   })
   $("#submit-order").click(function(event){
+    console.log(piesList);
+    if (piesList.length != 0) {
     $("#pizzaOptions").hide();
     $("#reciept").show()
     piesList.forEach(function(pie) {
     $("#pizzasOrdered").append("<li> a " + pie.yourPizza() + " - " + pie.cost() + " Kongbucks" + "</li>");
     })
-    $("#reciept").append(you.location())
+    $("#address").text(you.location())
+    $("#customerName").append(you.firstName)
+    $("#orderNumber").append(Math.floor(Math.random() * 100000000000))
+  }
   });
 });

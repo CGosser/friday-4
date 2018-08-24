@@ -2,22 +2,41 @@
   cursor: pointer;
   color: #0088cc;
 }
+
 #thisPizza {
   display: none;
 }
+
 #pizzaOptions {
   display: none;
 }
+
 #reciept {
   display: none;
 }
-.container {
-  margin-top: 8%;
-}
+
 #reciept {
   display: none;
 }
 
 #pizzasOrdered {
   text-transform: capitalize;
+}
+
+.jumbotron img{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.jumbotron {
+  background-color: darkgrey;
+}
+
+.container {
+  margin-bottom: 3%;
+}
+
+button {
+  text-size: 2em;
 }
