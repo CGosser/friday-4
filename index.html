@@ -10,67 +10,92 @@
 </head>
 <body>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-7">
 
+    <div class="row" id="customerDetails">
+      <form id="newCustomer">
+        <div class="form-group">
+          <label for="new-first-name">First name</label>
+          <input type="text" class="form-control" id="firstName">
+        </div>
+        <div class="form-group">
+          <label for="new-last-name">Last name</label>
+          <input type="text" class="form-control" id="lastName">
+        </div>
+        <div class="address">
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" class="form-control" id="street">
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city">
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" class="form-control" id="state">
+          </div>
+        </div>
+          <button type="button" id="submitCustomer">Submit Customer Details</button>
+        </div>
 
+        <div class="row" id="pizzaOptions">
+          <div class="col-lg-7">
+            <select class="form-control" id="topping">
+              <option value="pepperoni">Pepperoni</option>
+              <option value="sausage">Sausage</option>
+              <option value="pineapple">Pineapple</option>
+              <option value="pineapple and mustard">Pineapple with mustard</option>
+              <option value="anchovy">Anchovy</option>
+              <option value="cheese">Cheese</option>
+            </select>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="personal" >
+                Personal - 8"
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="small">
+                Small - 10"
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="medium">
+                Medium - 12"
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="large">
+                Large - 15"
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="xtra" checked>
+                Xtra Large - 20"
+              </label>
+            </div>
+            <button type="button" id="add-pizza">add pie</button>
+            <div class="order">
+              <p id="totalPrice">your order today comes to: <span id="price">0</span> Kongbucks*</p>
+              <ul id="yourPies">
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-5">
 
-  <select class="form-control" id="topping">
-    <option value="pepperoni">Pepperoni</option>
-    <option value="sausage">Sausage</option>
-    <option value="pineapple">Pineapple</option>
-    <option value="pineapple and mustard">Pineapple with mustard</option>
-    <option value="anchovy">Anchovy</option>
-    <option value="cheese">Cheese</option>
-  </select>
-  <div class="radio">
-    <label>
-      <input type="radio" name="size" value="personal" >
-      Personal - 8"
-    </label>
-  </div>
-  <div class="radio">
-    <label>
-      <input type="radio" name="size" value="small">
-      Small - 10"
-    </label>
-  </div>
-  <div class="radio">
-    <label>
-      <input type="radio" name="size" value="medium">
-      Medium - 12"
-    </label>
-  </div>
-  <div class="radio">
-    <label>
-      <input type="radio" name="size" value="large">
-      Large - 15"
-    </label>
-  </div>
-  <div class="radio">
-    <label>
-      <input type="radio" name="size" value="Xtra" checked>
-      Xtra Large - 20"
-    </label>
-  </div>
-  <button type="button" class="btn btn-primary" id="add-pizza">add pie</button>
-  <div class="order">
-    <p id="totalPrice">your order today comes to: <span id="price">0</span> Kongbucks*</p>
-    <ul id="yourPies">
-    </ul>
-  </div>
-</div>
-<div class="col-lg-5">
+            <div class="panel" id="thisPizza">
+              <h2>This pizza:</h2>
+              <p>The topping on this pizza is: <strong><span class="yourTopping"> </span></strong></p>
+              <p>This is a <strong><span class="yourSize"> </span></strong> pizza</p>
+              <p>this pizza costs <strong><span class="yourPrice"></span> Kongbucks</strong></p>
+            </div>
+          </div>
 
-  <div class="panel" id="thisPizza">
-    <h2>This pizza:</h2>
-    <p>The topping on this pizza is: <strong><span class="yourTopping"> </span></strong> </p>
-    <p>This is a <strong><span class="yourSize"> </span></strong> pizza</p>
-    <p>this pizza costs <strong><span class="yourPrice"> </span> Kongbucks</strong></p>
-  </div>
-</div>
-
-</div>
-    </div>
-</body>
-</html>
+        </div>
+      </div>
+    </body>
+    </html>

@@ -1,6 +1,12 @@
+function customer(first, last) {
+  this.firstName = first;
+  this.lastName = last;
+  this.address = [];
+}
+
 function pizza(size, topping) {
-this.size = size
-this.topping = topping
+  this.size = size;
+  this.topping = topping;
 }
 
 
@@ -43,6 +49,17 @@ $(document).ready(function(){
   var size = ""
   var piesList = []
   var totalPrice = 0
+  $("#submitCustomer").click(function(event){
+    event.preventDefault()
+    var firstName = $("#firstName").val();
+    var lastName = $("#lastName").val();
+    var street = $("#street").val();
+    var city = $("#city").val();
+    var state = $("#state").val();
+    var you = new customer(firstName, lastName);
+    // customer.address.push(street, city, state)
+    $("#customerDetails").hide()
+  })
   $("#add-pizza").click(function(event){
     event.preventDefault()
     topping = $("#topping").val();
