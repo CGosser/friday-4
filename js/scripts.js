@@ -3,18 +3,18 @@ this.size = size
 this.topping = topping
 }
 
+
 pizza.prototype.cost = function() {
   var price = 0.0
   var priceMult = 1.0
-  console.log(this.topping);
-  console.log(this.size);
+
   if (this.topping == "pepperoni"){
     price = 10
   } else if (this.topping == "sausage") {
     price = 12
   } else if (this.topping == "pineapple") {
     price = 15
-  } else if (this.topping == "mustard") {
+  } else if (this.topping == "pineapple with mustard") {
     price = 20
   } else if (this.topping == "anchovy") {
     price = 13
@@ -36,11 +36,29 @@ pizza.prototype.cost = function() {
  console.log(priceMult);
   return price * priceMult
 }
+pizza.prototype.yourPizza = function() {
+  return this.size + " with " + this.topping
+}
 
 $(document).ready(function(){
-  var topping = $("#topping").val();
-  var size = $("input:radio[name=size]:checked").val();
+  var topping = ""
+  var size = ""
+  var piesList = []
+  var totalPrice = 0
   $("#add-pizza").click(function(event){
-    var pie = new pizza(size, topping)
+    topping = $("#topping").val();
+    size = $("input:radio[name=size]:checked").val();
+    var pie = new pizza(size, topping);
+    piesList.push(pie);
+    console.log(pie);
+    console.log(pie.size);
+    console.log(pie.yourPizza());
+    totalPrice += pie.cost()
+    $("#price").empty()
+    $("#price").text(totalPrice)
+    $("#yourPies").append("<li><span class='pie'>" + pie.yourPizza() + "</span></li>");
+    $(".pie").last().click(function() {
+      $(".thisPizza")
+    });
   })
 })

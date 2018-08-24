@@ -1,0 +1,7 @@
+.pie {
+  cursor: pointer;
+  color: #0088cc;
+}
+#thisPizza {
+  display: none;
+}
