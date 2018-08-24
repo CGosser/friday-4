@@ -9,6 +9,12 @@
   <title>Cosa Nostra Pizza Incorporated</title>
 </head>
 <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+
+
+
   <select class="form-control" id="topping">
     <option value="pepperoni">Pepperoni</option>
     <option value="sausage">Sausage</option>
@@ -38,23 +44,33 @@
   <div class="radio">
     <label>
       <input type="radio" name="size" value="large">
-      Large - 14"
+      Large - 15"
     </label>
   </div>
   <div class="radio">
     <label>
       <input type="radio" name="size" value="Xtra" checked>
-      Xtra Large - 16"
+      Xtra Large - 20"
     </label>
   </div>
   <button type="button" class="btn btn-primary" id="add-pizza">add pie</button>
   <div class="order">
-    <p id="totalPrice">your order today comes to: <span id="price">0</span> Kongbucks</p>
+    <p id="totalPrice">your order today comes to: <span id="price">0</span> Kongbucks*</p>
     <ul id="yourPies">
     </ul>
   </div>
-  <div id="thisPizza">
+</div>
+<div class="col-lg-5">
 
+  <div class="panel" id="thisPizza">
+    <h2>This pizza:</h2>
+    <p>The topping on this pizza is: <strong><span class="yourTopping"> </span></strong> </p>
+    <p>This is a <strong><span class="yourSize"> </span></strong> pizza</p>
+    <p>this pizza costs <strong><span class="yourPrice"> </span> Kongbucks</strong></p>
   </div>
+</div>
+
+</div>
+    </div>
 </body>
 </html>
