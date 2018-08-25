@@ -8,6 +8,26 @@
 
 _This website has a form to input customer details and make an order for pizza, then displays them_
 
+## specs
+* _will take inputs for size and toppings of pizza_
+  * _expected input: large, pepperoni_
+  * _expected output: large pepperoni pizza_
+
+
+* _will accept inputs for name and address_
+  * _expected input: Chris Gosser, address_
+  * _expected output: Chris Gosser, address_
+
+
+* _will display a price for the pizza ordered_
+  * _expected input: large, pepperoni_
+    * _expected output: (the price)_
+
+
+* _will display all pizzas along with the price at the end_
+  * _expected input: large pepperoni, small cheese_
+  * _expected output: (combined price)_
+
 ## Setup/Installation Requirements
 
 * _clone github repository_
