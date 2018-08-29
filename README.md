@@ -21,12 +21,12 @@ _This website has a form to input customer details and make an order for pizza, 
 
 * _will display a price for the pizza ordered_
   * _expected input: large, pepperoni_
-    * _expected output: (the price)_
+  * _expected output: (the price)_
 
 
-* _will display all pizzas along with the price at the end_
+* _will display all pizzas along with the total price at the end_
   * _expected input: large pepperoni, small cheese_
-  * _expected output: (combined price)_
+  * _expected output: large pepperoni, small cheese, (combined price)_
 
 ## Setup/Installation Requirements
 
